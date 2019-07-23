@@ -1,0 +1,30 @@
+#!bin/bash
+
+alias c="clear"
+alias be="bundle exec"
+alias ll="ls -al"
+alias fs="foreman start"
+alias fsd="foreman start -f Procfile.dev"
+
+# TODO: Add git commands to cli
+alias gf="git fetch --all --prune"
+alias gr="git remote -v"
+alias gs="git status"
+alias gb="git branch"
+alias gd="git diff"
+alias ts="tig status"
+alias gst="git stash"
+alias gstp="git stash pop"
+
+alias gk="gitk --all&"
+alias mdb="mongod --config /usr/local/etc/mongod.conf&"
+alias br="bundle && rake db:migrate"
+alias redis="redis-server /usr/local/etc/redis.conf&"
+alias dl="tail -f log/development.log"
+alias ctags="`brew --prefix`/bin/ctags"
+alias cptags="ctags -R --exclude=node_modules --exclude=bower_components"
+alias tma="tmux attach -t"
+alias tmk="tmux kill-session -t"
+alias kill_sessions="tmux ls | sed -n -e "s/:.*//p" | xargs -n 1 tmux kill-session -t"
+alias srcp="source ~/.profile"
+alias axe="git log -p -S"

@@ -1,0 +1,51 @@
+#!bin/bash
+
+vc () {
+  if [$1]; then
+    command nvim $(git modified HEAD~$1)
+  else
+    command nvim $(git modified)
+  fi
+}
+
+commitdiff () {
+  command git log $1 ^$2
+}
+
+rf () {
+  if [ $2 ]; then
+    command git branch --all | sed -n -e "s/remotes\/$1\///p" | grep $2
+  else
+    command git branch --all | sed -n -e "s/remotes\/$1\///p"
+  fi
+}
+
+gpr () {
+  command git pull $1 $(rf $1 $2)
+}
+
+gp () {
+  command git push $1 $2 -n
+  printf '\n'
+  read -p 'Are you sure you want to push this up? [y/n]  ' confirmation
+  printf '\n'
+  if [ $confirmation == 'y' ]; then
+    command git push $1 $2
+  fi
+}
+
+gri () {
+  command git rebase -i HEAD~$1
+}
+
+gcm () {
+  command git commit -m "$*"
+}
+
+gra () {
+  command git remote add $1 git@github.com:$2/${PWD##*/}.git
+}
+
+grm () {
+  command git remote remove $1
+}
