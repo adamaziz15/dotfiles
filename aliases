@@ -15,6 +15,7 @@ alias gd="git diff"
 alias ts="tig status"
 alias gst="git stash"
 alias gstp="git stash pop"
+alias axe="git log -p -S"
 
 alias gk="gitk --all&"
 alias mdb="mongod --config /usr/local/etc/mongod.conf&"
@@ -23,8 +24,12 @@ alias redis="redis-server /usr/local/etc/redis.conf&"
 alias dl="tail -f log/development.log"
 alias ctags="`brew --prefix`/bin/ctags"
 alias cptags="ctags -R --exclude=node_modules --exclude=bower_components"
+alias srcp="source ~/.profile"
+
+# tmux
+# TODO: Create cli style function for tmux mgmt
 alias tma="tmux attach -t"
 alias tmk="tmux kill-session -t"
-alias kill_sessions="tmux ls | sed -n -e "s/:.*//p" | xargs -n 1 tmux kill-session -t"
-alias srcp="source ~/.profile"
-alias axe="git log -p -S"
+alias tmn="tmux new -s"
+alias tmka="tmux ls | sed -n -e "s/:.*//p" | xargs -n 1 tmux kill-session -t"
+alias tmls="tmux ls"
