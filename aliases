@@ -1,6 +1,7 @@
 #!bin/bash
 
 alias c="clear"
+alias b="bundle"
 alias be="bundle exec"
 alias ll="ls -al"
 alias fs="foreman start"
@@ -15,6 +16,7 @@ alias gd="git diff"
 alias ts="tig status"
 alias gst="git stash"
 alias gstp="git stash pop"
+alias gco="git checkout"
 alias axe="git log -p -S"
 
 alias gk="gitk --all&"
