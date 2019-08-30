@@ -2,9 +2,11 @@
 
 vc () {
   if [$1]; then
-    command nvim $(git modified HEAD~$1)
+    # command nvim $(git modified HEAD~$1)
+    command code $(git modified HEAD~$1)
   else
-    command nvim $(git modified)
+    # command nvim $(git modified)
+    command code $(git modified)
   fi
 }
 

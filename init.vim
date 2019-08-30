@@ -26,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'flazz/vim-colorschemes'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'noprompt/vim-yardoc'
 
 call plug#end()
 
